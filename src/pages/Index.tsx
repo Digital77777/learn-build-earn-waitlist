@@ -1,12 +1,41 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import Hero from "@/components/landing/Hero";
+import ValueProps from "@/components/landing/ValueProps";
+import Included from "@/components/landing/Included";
+import WaitlistForm from "@/components/landing/WaitlistForm";
+import SocialProof from "@/components/landing/SocialProof";
+import Urgency from "@/components/landing/Urgency";
+import Footer from "@/components/layout/Footer";
+import { useEffect } from "react";
 
 const Index = () => {
+  useEffect(() => {
+    document.documentElement.lang = "en";
+  }, []);
+
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Digital Intelligence Marketplace",
+    url: "https://launch.digitalintelligencemarketplace.com/",
+    sameAs: [
+      "https://twitter.com/",
+      "https://www.linkedin.com/",
+    ],
+  };
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div>
+      <Hero />
+      <main>
+        <ValueProps />
+        <Included />
+        <WaitlistForm />
+        <SocialProof />
+        <Urgency />
+      </main>
+      <Footer />
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
     </div>
   );
 };
