@@ -4,6 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
 
 const schema = z.object({
   email: z.string().email("Please enter a valid email"),
@@ -21,11 +22,24 @@ const WaitlistForm = () => {
   } = useForm<FormValues>({ resolver: zodResolver(schema) });
 
   const onSubmit = async (values: FormValues) => {
-    // TODO: Wire this to Supabase once connected
     try {
-      await new Promise((r) => setTimeout(r, 700));
-      toast.success("You're on the list! We'll notify you before launch.");
-      reset();
+      const { error } = await supabase
+        .from("waiting_list")
+        .insert({
+          email: values.email.trim(),
+          university: values.university ? values.university.trim() : null,
+        });
+
+      if (error) {
+        if ((error as any)?.code === "23505") {
+          toast.message("You're already on the list with this email.");
+        } else {
+          throw error;
+        }
+      } else {
+        toast.success("You're on the list! We'll notify you before launch.");
+        reset();
+      }
     } catch (e) {
       toast.error("Something went wrong. Please try again.");
     }
