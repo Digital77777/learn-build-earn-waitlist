@@ -15,7 +15,7 @@ const VideoSection = () => {
           <div className="mt-8">
             <AspectRatio ratio={16/9} className="overflow-hidden rounded-lg border bg-card shadow-lg">
               <iframe
-                src="https://www.youtube.com/embed/ixx1b-S-Ii0"
+                src="https://www.youtube.com/embed/ixx1b-S-Ii0?autoplay=1&mute=1&controls=1&rel=0"
                 className="h-full w-full"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
