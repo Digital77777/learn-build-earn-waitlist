@@ -1,4 +1,5 @@
 import Hero from "@/components/landing/Hero";
+import VideoSection from "@/components/landing/VideoSection";
 import ValueProps from "@/components/landing/ValueProps";
 import Included from "@/components/landing/Included";
 import WaitlistForm from "@/components/landing/WaitlistForm";
@@ -27,6 +28,7 @@ const Index = () => {
     <div>
       <Hero />
       <main>
+        <VideoSection />
         <ValueProps />
         <Included />
         <WaitlistForm />
