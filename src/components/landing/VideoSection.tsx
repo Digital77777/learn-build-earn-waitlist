@@ -1,4 +1,3 @@
-import { Play } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 const VideoSection = () => {
@@ -15,29 +14,13 @@ const VideoSection = () => {
           
           <div className="mt-8">
             <AspectRatio ratio={16/9} className="overflow-hidden rounded-lg border bg-card shadow-lg">
-              {/* Placeholder for video - replace with actual video embed */}
-              <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-primary/20 to-secondary/20">
-                <div className="text-center">
-                  <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 backdrop-blur-sm">
-                    <Play className="h-8 w-8 text-primary" fill="currentColor" />
-                  </div>
-                  <h3 className="text-lg font-semibold">Platform Overview Video</h3>
-                  <p className="mt-2 text-sm text-muted-foreground">
-                    Click to watch how AI Campus transforms learning
-                  </p>
-                </div>
-              </div>
-              
-              {/* 
-              Replace the div above with actual video embed when video is ready:
               <iframe
-                src="your-video-url-here"
+                src="https://www.youtube.com/embed/ixx1b-S-Ii0"
                 className="h-full w-full"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
                 title="AI Campus Platform Overview"
               />
-              */}
             </AspectRatio>
           </div>
           
