@@ -13,7 +13,7 @@ const Urgency = () => {
             Spots for early access are limited — secure yours now.
           </h2>
           <div className="mt-6">
-            <Countdown date="2025-09-01T00:00:00Z" />
+            <Countdown date="2025-10-10T00:00:00Z" />
           </div>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
             <Button asChild variant="hero" size="xl">
