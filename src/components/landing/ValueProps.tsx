@@ -17,7 +17,7 @@ const items = [
     icon: Wallet,
     title: "Earn",
     desc:
-      "Get hired for gigs and internships while you study. Build your portfolio and earn real income.",
+      "Get hired for gigs and internships while you study. Build your portfolio, earn real income, and sell your own AI creations.",
   },
 ];
 
