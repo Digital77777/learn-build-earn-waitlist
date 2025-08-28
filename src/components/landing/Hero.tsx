@@ -20,7 +20,7 @@ const Hero = () => {
             <div className="text-left">
               <div className="inline-flex items-center gap-2 rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground">
                 <Rocket className="h-4 w-4" aria-hidden />
-                <span>Launching August 2025</span>
+                <span>Launching October 2025</span>
               </div>
               <h1 className="mt-4 text-4xl font-bold leading-tight md:text-5xl">
                 🎓 Learn AI. Build Projects. Earn While You Study.
