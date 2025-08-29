@@ -7,7 +7,9 @@ import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 
 const schema = z.object({
+  name: z.string().min(1, "Please enter your name"),
   email: z.string().email("Please enter a valid email"),
+  cellphone: z.string().optional().or(z.literal("")),
   university: z.string().max(120).optional().or(z.literal("")),
 });
 
@@ -26,7 +28,9 @@ const WaitlistForm = () => {
       const { error } = await supabase
         .from("waiting_list")
         .insert({
+          name: values.name.trim(),
           email: values.email.trim(),
+          cellphone: values.cellphone ? values.cellphone.trim() : null,
           university: values.university ? values.university.trim() : null,
         });
 
@@ -62,6 +66,20 @@ const WaitlistForm = () => {
           <div className="grid gap-3 sm:col-span-2">
             <div>
               <Input
+                type="text"
+                placeholder="Full name"
+                aria-invalid={!!errors.name}
+                aria-describedby="name-error"
+                {...register("name")}
+              />
+              {errors.name && (
+                <p id="name-error" className="mt-1 text-xs text-destructive">
+                  {errors.name.message}
+                </p>
+              )}
+            </div>
+            <div>
+              <Input
                 type="email"
                 placeholder="Email address"
                 aria-invalid={!!errors.email}
@@ -73,6 +91,13 @@ const WaitlistForm = () => {
                   {errors.email.message}
                 </p>
               )}
+            </div>
+            <div>
+              <Input
+                type="tel"
+                placeholder="Phone number (optional)"
+                {...register("cellphone")}
+              />
             </div>
             <div>
               <Input type="text" placeholder="University / College (optional)" {...register("university")} />
