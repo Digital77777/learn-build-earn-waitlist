@@ -20,12 +20,12 @@ const Hero = () => {
             <div className="text-left">
               <div className="inline-flex items-center gap-2 rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground">
                 <Rocket className="h-4 w-4" aria-hidden />
-                <span>Launching October 2025</span>
+                <span>Launching November 2025</span>
               </div>
               <h1 className="mt-4 text-4xl font-bold leading-tight md:text-5xl">
                 🎓 Learn AI. Build Projects. Earn While You Study.
               </h1>
-              <p className="mt-3 text-base text-muted-foreground md:text-lg">Join the Digital Intelligence Marketplace — launching October 2025.</p>
+              <p className="mt-3 text-base text-muted-foreground md:text-lg">Join the Digital Intelligence Marketplace — launching November 2025.</p>
               <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <Button asChild variant="hero" size="xl">
                   <a href="#waitlist">Join the Waiting List</a>
